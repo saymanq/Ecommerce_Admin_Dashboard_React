@@ -38,7 +38,7 @@ const Navbar = () => {
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  });
 
   useEffect(() => {
     if (screenSize <= 900) {
@@ -46,6 +46,7 @@ const Navbar = () => {
     } else {
       setActiveMenu(true);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenSize]);
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
